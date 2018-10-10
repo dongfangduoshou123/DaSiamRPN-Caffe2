@@ -4,10 +4,14 @@ Distractor-aware Siamese Networks for Visual Object Tracking Inference in C++ po
 For more detail information:Please visit the original Pytorch repo:https://github.com/foolwood/DaSiamRPN
 
     python2.7  (for convert model only)
+    pytorch == 0.3.1 (for convert model only)
+    numpy (for convert model only)
     caffe2
     Eigen
     opencv
     CUDA
+    
+    if you just use my converted model, python2.7 pytorch and numpy is not Necessary。
 The Model is Convert from the original Pytorch not by the ONNX but by a python script(in script dir).  Because the DaSiamRPN's inference is a Dynamic graph Not Static graph.As description in onnx it has limit to export Dynamic graph.
 
 Converted model for SiamRPN's Download link:
