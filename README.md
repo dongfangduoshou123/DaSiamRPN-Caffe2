@@ -8,7 +8,8 @@ For more detail information:Please visit the original Pytorch repo:https://githu
     Eigen
     opencv
     CUDA
-The Model is not Convert by the ONNX but by a simple python script, Since the DaSiamRPN's inference is a Dynamic graph Not Static graph.As description in onnx it has limit to export Dynamic graph.
+The Model is not Convert by the ONNX but by a simple python script(Since the DaSiamRPN's inference is a Dynamic graph Not Static graph.As description in onnx it has limit to export Dynamic graph.)
+
 Converted model for SiamRPN's Download link:
 
 
