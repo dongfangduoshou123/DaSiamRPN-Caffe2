@@ -162,7 +162,7 @@ class SiamRPNBG_Caffe2:
 
 
 core.GlobalInit(['caffe2', '--caffe2_log_level=0'])
-workspace.ResetWorkspace("/opt/caffe2_yolov3")
+workspace.ResetWorkspace("/opt")
 DaSiam=SiamRPNBG_Caffe2()
 workspace.RunNetOnce(DaSiam.Init_Net)
 workspace.RunNetOnce(DaSiam.addJustModel.param_init_net)
@@ -171,7 +171,7 @@ img = cv2.imread('/opt/out.jpg')
 b, g, r = cv2.split(img)
 rgb_img = cv2.merge([r, g, b])
 sized = cv2.resize(rgb_img, (255, 255), interpolation=cv2.INTER_CUBIC)
-# exportaspb.export(workspace=workspace,net=DaSiam.InitModel.net,params=DaSiam.InitModel.params,init_net_name="/opt/caffe2_yolov3/global_init_net.pb",predict_net_name="/opt/caffe2_yolov3/global_pred_net.pb")
+# exportaspb.export(workspace=workspace,net=DaSiam.InitModel.net,params=DaSiam.InitModel.params,init_net_name="/opt/global_init_net.pb",predict_net_name="/opt/global_pred_net.pb")
 npar = np.array(sized)
 pp = np.ascontiguousarray(np.transpose(npar,[2,0,1])).reshape(1,3,sized.shape[0],sized.shape[1]).astype(np.float32)/255.0
 # print(DaSiam.Temple_Net.Proto())
@@ -321,20 +321,20 @@ def savemodelfile(model):
                                   inputs=["data"],
                                   outputs=["conv_r1","conv_cls1"]
                                   )
-    save_to_db("minidb", "/opt/caffe2_yolov3/DasiamRPN.minidb", pe_meta)
-    print ("The deploy model is saved to: /opt/caffe2_yolov3/DasimRPN.minidb")
+    save_to_db("minidb", "/opt/DasiamRPN.minidb", pe_meta)
+    print ("The deploy model is saved to: /opt/DasimRPN.minidb")
 
 savemodelfile(DaSiam.InitModel)
-dump_proto_files(DaSiam.TrackModel,"/opt/caffe2_yolov3","track_init.pbtxt","track_pred.pbtxt")
-dump_proto_files(DaSiam.TempleModel,"/opt/caffe2_yolov3","temple_init.pbtxt","temple_pred.pbtxt")
-dump_proto_files(DaSiam.InitModel,"/opt/caffe2_yolov3","global_init.pbtxt","global_pred.pbtxt")
+dump_proto_files(DaSiam.TrackModel,"/opt","track_init.pbtxt","track_pred.pbtxt")
+dump_proto_files(DaSiam.TempleModel,"/opt","temple_init.pbtxt","temple_pred.pbtxt")
+dump_proto_files(DaSiam.InitModel,"/opt","global_init.pbtxt","global_pred.pbtxt")
 
 
-exportaspb.export(workspace=workspace,net=DaSiam.InitModel.net,params=DaSiam.InitModel.params,init_net_name="/opt/caffe2_yolov3/global_init_net.pb",predict_net_name="/opt/caffe2_yolov3/global_pred_net.pb")
-exportaspb.export(workspace=workspace,net=DaSiam.TempleModel.net,params=DaSiam.TempleModel.params,init_net_name="/opt/caffe2_yolov3/temple_init_net.pb",predict_net_name="/opt/caffe2_yolov3/temple_pred_net.pb")
-exportaspb.export(workspace=workspace,net=DaSiam.TrackModel.net,params=DaSiam.TrackModel.params,init_net_name="/opt/caffe2_yolov3/track_init_net.pb",predict_net_name="/opt/caffe2_yolov3/track_pred_net.pb")
+exportaspb.export(workspace=workspace,net=DaSiam.InitModel.net,params=DaSiam.InitModel.params,init_net_name="/opt/global_init_net.pb",predict_net_name="/opt/global_pred_net.pb")
+exportaspb.export(workspace=workspace,net=DaSiam.TempleModel.net,params=DaSiam.TempleModel.params,init_net_name="/opt/temple_init_net.pb",predict_net_name="/opt/temple_pred_net.pb")
+exportaspb.export(workspace=workspace,net=DaSiam.TrackModel.net,params=DaSiam.TrackModel.params,init_net_name="/opt/track_init_net.pb",predict_net_name="/opt/track_pred_net.pb")
 
-exportaspb.export(workspace=workspace,net=DaSiam.addJustModel.net,params=DaSiam.addJustModel.params,init_net_name="/opt/caffe2_yolov3/adjust_init_net.pb",predict_net_name="/opt/caffe2_yolov3/adjust_pred_net.pb")
+exportaspb.export(workspace=workspace,net=DaSiam.addJustModel.net,params=DaSiam.addJustModel.params,init_net_name="/opt/adjust_init_net.pb",predict_net_name="/opt/adjust_pred_net.pb")
 
-exportaspb.export(workspace=workspace,net=DaSiam.CorrelationFilterModel.net,params=DaSiam.CorrelationFilterModel.params,init_net_name="/opt/caffe2_yolov3/Correlation_init_net.pb",predict_net_name="/opt/caffe2_yolov3/Correlation_pred_net.pb")
+exportaspb.export(workspace=workspace,net=DaSiam.CorrelationFilterModel.net,params=DaSiam.CorrelationFilterModel.params,init_net_name="/opt/Correlation_init_net.pb",predict_net_name="/opt/Correlation_pred_net.pb")
 
