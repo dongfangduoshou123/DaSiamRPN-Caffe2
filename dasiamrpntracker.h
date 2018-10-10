@@ -15,15 +15,15 @@
 #include <Eigen/Core>
 #include <Eigen/Dense>
 #define DEBUG_ 0
-static std::string global_init_net_file = "/opt/caffe2_yolov3/global_init_net.pb";
-static std::string temple_net_file = "/opt/caffe2_yolov3/temple_pred_net.pb";
-static std::string track_net_file = "/opt/caffe2_yolov3/track_pred_net.pb";
+static std::string global_init_net_file = "/opt/global_init_net.pb";
+static std::string temple_net_file = "/opt/temple_pred_net.pb";
+static std::string track_net_file = "/opt/track_pred_net.pb";
 
-static std::string adjust_init_net_file = "/opt/caffe2_yolov3/adjust_init_net.pb";
-static std::string adjust_pred_net_file = "/opt/caffe2_yolov3/adjust_pred_net.pb";
+static std::string adjust_init_net_file = "/opt/adjust_init_net.pb";
+static std::string adjust_pred_net_file = "/opt/adjust_pred_net.pb";
 
-static std::string Correlation_init_net_file = "/opt/caffe2_yolov3/Correlation_init_net.pb";
-static std::string Correlation_pred_net_file = "/opt/caffe2_yolov3/Correlation_pred_net.pb";
+static std::string Correlation_init_net_file = "/opt/Correlation_init_net.pb";
+static std::string Correlation_pred_net_file = "/opt/Correlation_pred_net.pb";
 
 struct TrackerConfig{
 // These are the default hyper-params for DaSiamRPN 0.3827
