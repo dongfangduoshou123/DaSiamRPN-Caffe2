@@ -2,6 +2,8 @@
 # DaSiamRPN
 # Licensed under The MIT License
 # Written by Qiang Wang (wangqiang2015 at ia.ac.cn)
+# -------------------------------------------------------
+#transfor to caffe2 part added by wzq 2018-10
 # --------------------------------------------------------
 import torch.nn as nn
 import torch.nn.functional as F
