@@ -1,3 +1,6 @@
+/* DaSiamRPNCaffe2
+# Licensed under The MIT License
+# Written by wzq*/
 #include "dasiamrpntracker.h"
 #include <caffe2/core/tensor.h>
 #include <caffe2/utils/math.h>
