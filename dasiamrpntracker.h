@@ -1,3 +1,6 @@
+/* DaSiamRPNCaffe2
+# Licensed under The MIT License
+# Written by wzq*/
 #ifndef DASIAMRPNTRACKER_H
 #define DASIAMRPNTRACKER_H
 #include <array>
