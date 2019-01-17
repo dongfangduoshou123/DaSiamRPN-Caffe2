@@ -1,3 +1,8 @@
+# DaSiamRPNCaffe2
+# Licensed under The MIT License
+# Written by wzq
+# Reference:Detectron
+# -------------------------------------------------------
 from caffe2.python import core, model_helper, net_drawer, workspace, visualize, brew
 from caffe2.python.predictor.mobile_exporter import Export
 
