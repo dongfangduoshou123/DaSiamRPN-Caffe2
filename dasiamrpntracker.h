@@ -4,7 +4,6 @@
 #include <vector>
 #include <math.h>
 #include <iostream>
-#include "dasiamrpntracker.h"
 #include <caffe2/core/init.h>
 #include <caffe2/core/context.h>
 #include <caffe2/core/context_gpu.h>
