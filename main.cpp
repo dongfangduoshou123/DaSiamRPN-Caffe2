@@ -1,3 +1,6 @@
+/* DaSiamRPNCaffe2
+# Licensed under The MIT License
+# Written by wzq*/
 #include <iostream>
 #include "dasiamrpntracker.h"
 using namespace std;
